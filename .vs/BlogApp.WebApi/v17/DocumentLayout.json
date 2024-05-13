@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\BlogAppProject.V2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\controllers\\blogpostscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\controllers\\blogpostscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\dtos\\updateblogpostresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\dtos\\updateblogpostresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\dtos\\updateblogpostrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\dtos\\updateblogpostrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\dtos\\getblogpostresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\dtos\\getblogpostresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\controllers\\imagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\controllers\\imagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\dtos\\updatecategoryrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\dtos\\updatecategoryrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\profiles\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\profiles\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\v1\\controllers\\blogpostscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\v1\\controllers\\blogpostscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,8 +30,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "BlogApp.WebApi\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "BlogApp.WebApi\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T18:16:41.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "BlogApp.WebApi\\Program.cs",
+              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Program.cs",
+              "RelativeToolTip": "BlogApp.WebApi\\Program.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T18:08:17.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BlogPostsController.cs",
+              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\V1\\Controllers\\BlogPostsController.cs",
+              "RelativeDocumentMoniker": "BlogApp.WebApi\\V1\\Controllers\\BlogPostsController.cs",
+              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\V1\\Controllers\\BlogPostsController.cs",
+              "RelativeToolTip": "BlogApp.WebApi\\V1\\Controllers\\BlogPostsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T18:07:07.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ImagesController.cs",
+              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Controllers\\ImagesController.cs",
+              "RelativeDocumentMoniker": "BlogApp.WebApi\\Controllers\\ImagesController.cs",
+              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Controllers\\ImagesController.cs",
+              "RelativeToolTip": "BlogApp.WebApi\\Controllers\\ImagesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T18:05:31.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "BlogApp.WebApi\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "BlogApp.WebApi\\Data\\AppDbContext.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAcwEYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T17:05:08.153Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -47,97 +104,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Profiles\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "BlogApp.WebApi\\Profiles\\MappingProfile.cs",
-              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Profiles\\MappingProfile.cs",
-              "RelativeToolTip": "BlogApp.WebApi\\Profiles\\MappingProfile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T00:41:54.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UpdateCategoryRequestDto.cs",
-              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\DTOs\\UpdateCategoryRequestDto.cs",
-              "RelativeDocumentMoniker": "BlogApp.WebApi\\DTOs\\UpdateCategoryRequestDto.cs",
-              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\DTOs\\UpdateCategoryRequestDto.cs",
-              "RelativeToolTip": "BlogApp.WebApi\\DTOs\\UpdateCategoryRequestDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T23:55:15.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UpdateBlogPostResponse.cs",
-              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\DTOs\\UpdateBlogPostResponse.cs",
-              "RelativeDocumentMoniker": "BlogApp.WebApi\\DTOs\\UpdateBlogPostResponse.cs",
-              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\DTOs\\UpdateBlogPostResponse.cs",
-              "RelativeToolTip": "BlogApp.WebApi\\DTOs\\UpdateBlogPostResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T23:54:30.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UpdateBlogPostRequest.cs",
-              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\DTOs\\UpdateBlogPostRequest.cs",
-              "RelativeDocumentMoniker": "BlogApp.WebApi\\DTOs\\UpdateBlogPostRequest.cs",
-              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\DTOs\\UpdateBlogPostRequest.cs",
-              "RelativeToolTip": "BlogApp.WebApi\\DTOs\\UpdateBlogPostRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T23:53:50.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Program.cs",
-              "RelativeDocumentMoniker": "BlogApp.WebApi\\Program.cs",
-              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Program.cs",
-              "RelativeToolTip": "BlogApp.WebApi\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T21:58:21.798Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GetBlogPostResponse.cs",
-              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\DTOs\\GetBlogPostResponse.cs",
-              "RelativeDocumentMoniker": "BlogApp.WebApi\\DTOs\\GetBlogPostResponse.cs",
-              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\DTOs\\GetBlogPostResponse.cs",
-              "RelativeToolTip": "BlogApp.WebApi\\DTOs\\GetBlogPostResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T21:49:51.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BlogPostsController.cs",
-              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Controllers\\BlogPostsController.cs",
-              "RelativeDocumentMoniker": "BlogApp.WebApi\\Controllers\\BlogPostsController.cs",
-              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Controllers\\BlogPostsController.cs",
-              "RelativeToolTip": "BlogApp.WebApi\\Controllers\\BlogPostsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAALEAAAB2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T02:25:47.376Z",
-              "EditorCaption": ""
             }
           ]
         },

@@ -1,6 +1,5 @@
 ﻿using BlogApp.WebApi.Data.Entities;
 using BlogApp.WebApi.DTOs;
-using BlogApp.WebApi.Repositories.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogApp.WebApi.Controllers;
@@ -8,12 +7,7 @@ namespace BlogApp.WebApi.Controllers;
 [ApiController]
 public class ImagesController : ControllerBase
 {
-    private readonly IImageRepository imageRepository;
 
-    public ImagesController(IImageRepository imageRepository)
-    {
-        this.imageRepository = imageRepository;
-    }
     // POST: {apibaseurl}/api/Images
     [HttpPost]
     public async Task<IActionResult> UploadImage([FromForm] IFormFile file, [FromForm] string fileName, [FromForm] string title)
