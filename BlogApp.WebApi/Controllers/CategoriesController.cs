@@ -1,8 +1,9 @@
-﻿using BlogApp.WebApi.Data.Entities;
+﻿using BlogApp.WebApi.Data;
+using BlogApp.WebApi.Data.Entities;
 using BlogApp.WebApi.DTOs;
-using BlogApp.WebApi.Repositories.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlogApp.WebApi.Controllers;
 
@@ -11,11 +12,11 @@ namespace BlogApp.WebApi.Controllers;
 [ApiController]
 public class CategoriesController : ControllerBase
 {
-    private readonly ICategoryRepository categoryRepository;
+    private readonly AppDbContext _context;
 
-    public CategoriesController(ICategoryRepository categoryRepository)
+    public CategoriesController(AppDbContext context)
     {
-        this.categoryRepository = categoryRepository;
+        context = _context;
     }
 
     [HttpPost]
@@ -29,7 +30,7 @@ public class CategoriesController : ControllerBase
            UrlHandle = request.UrlHandle
        };
 
-        await categoryRepository.CreateAsync(category);
+        await _context.Categories.AddAsync(category);
 
         //Domain model to DTO
         var response = new CategoryDto
@@ -49,8 +50,10 @@ public class CategoriesController : ControllerBase
         [FromQuery] int? pageNumber,
         [FromQuery] int? pageSize)
     {
-       var categories =  await categoryRepository
-            .GetAllAsync(query, sortBy, sortDirection, pageNumber, pageSize);//Give us all the categories from the database
+       //var categories =  await categoryRepository
+       //     .GetAllAsync(query, sortBy, sortDirection, pageNumber, pageSize);//Give us all the categories from the database
+
+        var categories = await _context.Categories.ToListAsync();
 
         //Map Domain Model to DTO
 
@@ -73,7 +76,7 @@ public class CategoriesController : ControllerBase
     [Route("{id:Guid}")]
     public async Task<IActionResult> GetCategoriesById([FromRoute]Guid id)
     {
-        var existingCategory = await categoryRepository.GetById(id);
+        var existingCategory = await _context.Categories.FindAsync(id);
 
         if(existingCategory is null)
         {
@@ -105,7 +108,10 @@ public class CategoriesController : ControllerBase
             UrlHandle = request.UrlHandle
         };
 
-        category = await categoryRepository.UpdateAsync(category);
+        //Update the category in the database  ????????????????
+
+
+        category = await _context.Categories.FindAsync(id);
 
         if(category is null)
         {
@@ -130,7 +136,7 @@ public class CategoriesController : ControllerBase
     [Authorize(Roles = "Writer")]
     public async Task<IActionResult> DeleteCategory([FromRoute] Guid id)
     {
-       var category = await categoryRepository.DeleteAsync(id);
+       var category = await _context.Categories.FindAsync(id);
         if (category is null)
         {
             return NotFound();
@@ -155,7 +161,7 @@ public class CategoriesController : ControllerBase
     //[Authorize(Roles = "Writer")]
     public async Task<IActionResult> GetCategoriesTotal()
     {
-        var count = await categoryRepository.GetCount();
+        var count = await _context.Categories.CountAsync();
 
         return Ok(count);
     }

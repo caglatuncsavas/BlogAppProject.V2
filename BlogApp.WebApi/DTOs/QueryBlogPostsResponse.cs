@@ -2,4 +2,5 @@
 
 public class QueryBlogPostsResponse
 {
+    public List<BlogPostDto>? BlogPosts { get; set; } 
 }

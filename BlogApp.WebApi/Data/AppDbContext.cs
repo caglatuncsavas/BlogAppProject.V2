@@ -1,7 +1,7 @@
 ﻿using BlogApp.WebApi.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace BlogApp.WebApi.Context;
+namespace BlogApp.WebApi.Data;
 
 public class AppDbContext :DbContext
 {

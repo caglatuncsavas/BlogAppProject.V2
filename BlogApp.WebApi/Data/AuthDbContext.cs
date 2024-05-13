@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace BlogApp.WebApi.Context;
-
-public class AuthDbContext: IdentityDbContext
+namespace BlogApp.WebApi.Data;
+public class AuthDbContext : IdentityDbContext
 {
     public AuthDbContext(DbContextOptions<AuthDbContext> options) : base(options)
     {
@@ -77,3 +76,5 @@ public class AuthDbContext: IdentityDbContext
 
     }
 }
+
+
