@@ -4,6 +4,7 @@ using BlogApp.WebApi.Data.Entities;
 using BlogApp.WebApi.V1.Requests.BlogPosts;
 using BlogApp.WebApi.V1.Responses.BlogPosts;
 using BlogApp.WebApi.V1.Responses.Categories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,7 +26,7 @@ public class BlogPostsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CreateBlogPostResponse))]
     public async Task<IActionResult> CreateBlogPost([FromBody] CreateBlogPostRequest request)
     {
-        //Convert DTO to Domain Model
+        // Convert DTO to Domain Model
         var blogPost = new BlogPost
         {
             Author = request.Author,
@@ -51,7 +52,7 @@ public class BlogPostsController : ControllerBase
         await _context.BlogPosts.AddAsync(blogPost);
         await _context.SaveChangesAsync();
 
-        //Before we return the response, we have to convert the domain model back to a DTO
+        // Before we return the response, we have to convert the domain model back to a DTO
         var response = new CreateBlogPostResponse
         {
             Id = blogPost.Id,
@@ -71,7 +72,7 @@ public class BlogPostsController : ControllerBase
             }).ToList()
         };
 
-        return Ok(response);
+        return CreatedAtAction(nameof(CreateBlogPost), new { id = blogPost.Id }, response);
     }
 
     [HttpGet("")]
@@ -79,9 +80,25 @@ public class BlogPostsController : ControllerBase
     public async Task<IActionResult> QueryBlogPosts()
     {
         var blogPosts = await _context.BlogPosts.Include(p => p.Categories).ToListAsync();
-        
 
-        List<QueryBlogPostsResponse> response = new List<QueryBlogPostsResponse>();
+
+        List<QueryBlogPostsResponse> response = blogPosts.Select(p => new QueryBlogPostsResponse
+        {
+            Title = p.Title,
+            ShortDescription = p.ShortDescription,
+            Content = p.Content,
+            CoverImageUrl = p.CoverImageUrl,
+            UrlHandle = p.UrlHandle,
+            Author = p.Author,
+            IsVisible = p.IsVisible,
+            PublishedDate = p.PublishedDate,
+            Categories = p.Categories.Select(p=> new CreateCategoryResponse
+            {
+                Id = p.Id,
+                Name = p.Name,
+                UrlHandle = p.UrlHandle
+            }).ToList()
+        }).ToList();
 
         return Ok(response);
     }
@@ -120,39 +137,39 @@ public class BlogPostsController : ControllerBase
         return Ok(response);
     }
 
-    [HttpGet("{urlHandle}")]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetBlogPostResponse))]
-    public async Task<IActionResult> GetBlogPost([FromRoute] string urlHandle)
-    {
-        //Get blogPost details from DB
-        var blogPost = await _context.BlogPosts.FirstOrDefaultAsync(p => p.UrlHandle == urlHandle);
+    //[HttpGet("{urlHandle}")]
+    //[ProducesResponseType(StatusCodes.Status404NotFound)]
+    //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetBlogPostResponse))]
+    //public async Task<IActionResult> GetBlogPost([FromRoute] string urlHandle)
+    //{
+    //    //Get blogPost details from DB
+    //    var blogPost = await _context.BlogPosts.FirstOrDefaultAsync(p => p.UrlHandle == urlHandle);
 
-        if (blogPost is null)
-        {
-            return NotFound();
-        }
+    //    if (blogPost is null)
+    //    {
+    //        return NotFound();
+    //    }
 
-        GetBlogPostResponse response = new GetBlogPostResponse
-        {
-            Id = blogPost.Id,
-            Author = blogPost.Author,
-            Content = blogPost.Content,
-            CoverImageUrl = blogPost.CoverImageUrl,
-            IsVisible = blogPost.IsVisible,
-            PublishedDate = blogPost.PublishedDate,
-            ShortDescription = blogPost.ShortDescription,
-            Title = blogPost.Title,
-            UrlHandle = blogPost.UrlHandle,
-            Categories = blogPost.Categories.Select(p => new CreateCategoryResponse
-            {
-                Id = p.Id,
-                Name = p.Name,
-                UrlHandle = p.UrlHandle
-            }).ToList()
-        };
-        return Ok(response);
-    }
+    //    GetBlogPostResponse response = new GetBlogPostResponse
+    //    {
+    //        Id = blogPost.Id,
+    //        Author = blogPost.Author,
+    //        Content = blogPost.Content,
+    //        CoverImageUrl = blogPost.CoverImageUrl,
+    //        IsVisible = blogPost.IsVisible,
+    //        PublishedDate = blogPost.PublishedDate,
+    //        ShortDescription = blogPost.ShortDescription,
+    //        Title = blogPost.Title,
+    //        UrlHandle = blogPost.UrlHandle,
+    //        Categories = blogPost.Categories.Select(p => new CreateCategoryResponse
+    //        {
+    //            Id = p.Id,
+    //            Name = p.Name,
+    //            UrlHandle = p.UrlHandle
+    //        }).ToList()
+    //    };
+    //    return Ok(response);
+    //}
 
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -166,10 +183,10 @@ public class BlogPostsController : ControllerBase
             return NotFound();
         }
 
-        //Update the domain model
+        // Update the domain model
         _mapper.Map(request, blogPost);
 
-        //Foreach
+        // Foreach
         foreach (var categoryGuid in request.Categories)
         {
             var existingCategory = await _context.Categories.FindAsync(categoryGuid);
@@ -182,7 +199,7 @@ public class BlogPostsController : ControllerBase
 
         await _context.SaveChangesAsync();
 
-        //Before we return the response, we have to convert the domain model back to a DTO
+        // Before we return the response, we have to convert the domain model back to a DTO
         var response = new UpdateBlogPostResponse()
         {
             Id = blogPost.Id,
@@ -205,6 +222,7 @@ public class BlogPostsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Writer")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public async Task<IActionResult> DeleteBlogPost([FromRoute] Guid id)

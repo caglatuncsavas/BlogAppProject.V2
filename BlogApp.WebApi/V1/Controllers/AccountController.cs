@@ -20,7 +20,7 @@ public class AccountController : ControllerBase
         _userManager = userManager;
         _configuration = configuration;
     }
-    private string createToken(IdentityUser user, List<string> roles)
+    private string CreateToken(IdentityUser user, List<string> roles)
     {
         var claims = new List<Claim>
         {
@@ -43,7 +43,7 @@ public class AccountController : ControllerBase
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
-    [HttpPost]
+    [HttpPost("login")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
@@ -62,7 +62,7 @@ public class AccountController : ControllerBase
 
                 // Create a Token and Response
               
-                var token = await Task.Run(() => createToken(user, roles.ToList()));
+                var token = await Task.Run(() => CreateToken(user, roles.ToList()));
 
                 var response = new LoginResponse()
                 {
@@ -79,7 +79,7 @@ public class AccountController : ControllerBase
         return ValidationProblem(ModelState);
     }
 
-    [HttpPost]
+    [HttpPost("register")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Register([FromBody] RegisterRequest request)

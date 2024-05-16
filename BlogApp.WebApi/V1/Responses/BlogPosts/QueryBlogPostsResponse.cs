@@ -1,12 +1,9 @@
-﻿using BlogApp.WebApi.V1.Requests;
-using BlogApp.WebApi.V1.Responses.Categories;
+﻿using BlogApp.WebApi.V1.Responses.Categories;
 
 namespace BlogApp.WebApi.V1.Responses.BlogPosts;
 
 public class QueryBlogPostsResponse
 {
-    public class QueryBlogPost
-    {
         public Guid Id { get; set; }
         public string Title { get; set; }
         public string ShortDescription { get; set; }
@@ -17,5 +14,4 @@ public class QueryBlogPostsResponse
         public bool IsVisible { get; set; }
         public string UrlHandle { get; set; }
         public List<CreateCategoryResponse> Categories { get; set; } = new List<CreateCategoryResponse>();
-    }
 }

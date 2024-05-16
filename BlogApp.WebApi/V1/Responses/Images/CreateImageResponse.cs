@@ -1,6 +1,6 @@
-﻿namespace BlogApp.WebApi.DTOs;
+﻿namespace BlogApp.WebApi.V1.Responses.Images;
 
-public class BlogImageDto
+public class CreateImageResponse
 {
     public Guid Id { get; set; }
     public string FileName { get; set; }

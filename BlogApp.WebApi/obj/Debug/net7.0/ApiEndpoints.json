@@ -1,6 +1,68 @@
 [
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.BlogPostsController",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.AccountController",
+    "Method": "Login",
+    "RelativePath": "api/Account/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BlogApp.WebApi.V1.Requests.Login.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.AccountController",
+    "Method": "Register",
+    "RelativePath": "api/Account/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BlogApp.WebApi.V1.Requests.Register.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.BlogPostsController",
     "Method": "CreateBlogPost",
     "RelativePath": "api/BlogPosts",
     "HttpMethod": "POST",
@@ -9,25 +71,54 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "BlogApp.WebApi.DTOs.CreateBlogPostRequestDto",
+        "Type": "BlogApp.WebApi.V1.Requests.BlogPosts.CreateBlogPostRequest",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "BlogApp.WebApi.V1.Responses.BlogPosts.CreateBlogPostResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.BlogPostsController",
-    "Method": "GetAllBlogPosts",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.BlogPostsController",
+    "Method": "QueryBlogPosts",
     "RelativePath": "api/BlogPosts",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BlogApp.WebApi.V1.Responses.BlogPosts.QueryBlogPostsResponse, BlogApp.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.BlogPostsController",
-    "Method": "GetBlogPostsById",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.BlogPostsController",
+    "Method": "GetBlogPost",
     "RelativePath": "api/BlogPosts/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -39,10 +130,29 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "BlogApp.WebApi.V1.Responses.BlogPosts.GetBlogPostResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.BlogPostsController",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.BlogPostsController",
     "Method": "UpdateBlogPostById",
     "RelativePath": "api/BlogPosts/{id}",
     "HttpMethod": "PUT",
@@ -56,14 +166,33 @@
       },
       {
         "Name": "request",
-        "Type": "BlogApp.WebApi.DTOs.UpdateBlogPostRequestDto",
+        "Type": "BlogApp.WebApi.V1.Requests.BlogPosts.UpdateBlogPostRequest",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "BlogApp.WebApi.V1.Responses.BlogPosts.UpdateBlogPostResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.BlogPostsController",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.BlogPostsController",
     "Method": "DeleteBlogPost",
     "RelativePath": "api/BlogPosts/{id}",
     "HttpMethod": "DELETE",
@@ -76,26 +205,25 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BlogApp.WebApi.Controllers.BlogPostsController",
-    "Method": "GetBlogPostByUrlHandle",
-    "RelativePath": "api/BlogPosts/{urlHandle}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+    "ReturnTypes": [
       {
-        "Name": "urlHandle",
-        "Type": "System.String",
-        "IsRequired": true
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
       }
-    ],
-    "ReturnTypes": []
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.CategoriesController",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.CategoriesController",
     "Method": "CreateCategory",
     "RelativePath": "api/Categories",
     "HttpMethod": "POST",
@@ -104,51 +232,80 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "BlogApp.WebApi.DTOs.CreateCategoryRequestDto",
+        "Type": "BlogApp.WebApi.V1.Requests.Categories.CreateCategoryRequest",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "BlogApp.WebApi.V1.Responses.Categories.CreateCategoryResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.CategoriesController",
-    "Method": "GetAllCategories",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.CategoriesController",
+    "Method": "QueryCategories",
     "RelativePath": "api/Categories",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "query",
+        "Name": "Query",
         "Type": "System.String",
         "IsRequired": false
       },
       {
-        "Name": "sortBy",
+        "Name": "SortBy",
         "Type": "System.String",
         "IsRequired": false
       },
       {
-        "Name": "sortDirection",
+        "Name": "SortDirection",
         "Type": "System.String",
         "IsRequired": false
       },
       {
-        "Name": "pageNumber",
+        "Name": "PageNumber",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
-        "Name": "pageSize",
+        "Name": "PageSize",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BlogApp.WebApi.V1.Responses.Categories.QueryCategoriesResponse, BlogApp.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.CategoriesController",
-    "Method": "GetCategoriesById",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.CategoriesController",
+    "Method": "GetCategory",
     "RelativePath": "api/Categories/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -160,11 +317,30 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "BlogApp.WebApi.V1.Responses.Categories.GetCategoryResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.CategoriesController",
-    "Method": "EditCategory",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.CategoriesController",
+    "Method": "UpdateCategory",
     "RelativePath": "api/Categories/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -177,14 +353,42 @@
       },
       {
         "Name": "request",
-        "Type": "BlogApp.WebApi.DTOs.UpdateCategoryRequestDto",
+        "Type": "BlogApp.WebApi.V1.Requests.Categories.UpdateCategoryRequest",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "BlogApp.WebApi.V1.Responses.Categories.UpdateCategoryResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.CategoriesController",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.CategoriesController",
     "Method": "DeleteCategory",
     "RelativePath": "api/Categories/{id}",
     "HttpMethod": "DELETE",
@@ -197,49 +401,50 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.CategoriesController",
-    "Method": "GetCategoriesTotal",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.CategoriesController",
+    "Method": "GetCategoryCount",
     "RelativePath": "api/Categories/count",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      }
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.ImagesController",
-    "Method": "UploadImage",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.ImagesController",
+    "Method": "CreateImage",
     "RelativePath": "api/Images",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "ContentType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ContentDisposition",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Headers",
-        "Type": "Microsoft.AspNetCore.Http.IHeaderDictionary",
-        "IsRequired": false
-      },
-      {
-        "Name": "Length",
-        "Type": "System.Int64",
-        "IsRequired": false
-      },
-      {
-        "Name": "Name",
-        "Type": "System.String",
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       },
       {
@@ -248,58 +453,50 @@
         "IsRequired": false
       },
       {
-        "Name": "fileName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "title",
+        "Name": "Title",
         "Type": "System.String",
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "BlogApp.WebApi.V1.Responses.Images.CreateImageResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
   },
   {
-    "ContainingType": "BlogApp.WebApi.Controllers.ImagesController",
-    "Method": "GetAllImages",
+    "ContainingType": "BlogApp.WebApi.V1.Controllers.ImagesController",
+    "Method": "QueryImages",
     "RelativePath": "api/Images",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BlogApp.WebApi.Controllers.UsersController",
-    "Method": "Register",
-    "RelativePath": "api/Users",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+    "ReturnTypes": [
       {
-        "Name": "request",
-        "Type": "BlogApp.WebApi.DTOs.RegisterRequestDto",
-        "IsRequired": true
+        "Type": "System.Collections.Generic.List\u00601[[BlogApp.WebApi.V1.Responses.Images.QueryBlogImageResponse, BlogApp.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
       }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BlogApp.WebApi.Controllers.UsersController",
-    "Method": "Login",
-    "RelativePath": "api/Users/login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "BlogApp.WebApi.DTOs.LoginRequestDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
+    ]
   }
 ]

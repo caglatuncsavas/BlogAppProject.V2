@@ -9,17 +9,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BlogApp.WebApi.V1.Controllers;
 
-// https://localhost:xxxx/api/categories
 [Route("api/[controller]")]
 [ApiController]
 public class CategoriesController : ControllerBase
 {
     private readonly AppDbContext _context;
     private readonly IMapper _mapper;
-
     public CategoriesController(AppDbContext context, IMapper mapper)
     {
-        context = _context;
+        _context = context;
         _mapper = mapper;
     }
 
@@ -35,8 +33,9 @@ public class CategoriesController : ControllerBase
         };
 
         await _context.Categories.AddAsync(category);
+        await _context.SaveChangesAsync();
 
-        //Domain model to DTO
+        // Domain model to DTO
         var response = new CreateCategoryResponse
         {
             Id = category.Id,
@@ -47,23 +46,19 @@ public class CategoriesController : ControllerBase
         return Ok(response);
     }
 
-    //GET: https://localhost:7228/api/Categories?query=html&sortBy=name&sortDirection=desc
     [HttpGet("")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<QueryCategoriesResponse>))]
-    public async Task<IActionResult> GetAllCategories([FromQuery] QueryCategoriesRequest request)
+    public async Task<IActionResult> QueryCategories([FromQuery] QueryCategoriesRequest request)
     {
-
         var queryable = _context.Categories.AsQueryable();
 
-        //Filtering 
-
+        // Filtering 
         if (!string.IsNullOrEmpty(request.Query))
         {
             queryable = queryable.Where(c => c.Name.Contains(request.Query));
         }
 
-        //Sorting
-
+        // Sorting
         if (!string.IsNullOrEmpty(request.SortBy))
         {
             if (request.SortDirection == "asc")
@@ -76,8 +71,7 @@ public class CategoriesController : ControllerBase
             }
         }
 
-        //Pagination
-
+        // Pagination
         if (request.PageNumber.HasValue && request.PageSize.HasValue)
         {
             queryable = queryable.Skip(request.PageNumber.Value - 1 - request.PageSize.Value).Take(request.PageSize.Value);
@@ -85,9 +79,7 @@ public class CategoriesController : ControllerBase
 
         var categories = await queryable.ToListAsync();
 
-
-        //Map Domain Model to DTO
-
+        // Map Domain Model to DTO
         var response = categories.Select(category => new QueryCategoriesResponse
         {
             Id = category.Id,
@@ -98,7 +90,7 @@ public class CategoriesController : ControllerBase
         return Ok(response);
     }
 
-    [HttpGet("id")]
+    [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetCategoryResponse))]
     public async Task<IActionResult> GetCategory([FromRoute] Guid id)
@@ -124,33 +116,32 @@ public class CategoriesController : ControllerBase
     [HttpGet("count")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<IActionResult> GetCategories()
+    public async Task<IActionResult> GetCategoryCount()
     {
         var count = await _context.Categories.CountAsync();
 
         return Ok(count);
     }
 
-    [HttpPut("id")]
+    [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UpdateCategoryResponse))]
     public async Task<IActionResult> UpdateCategory([FromRoute] Guid id, [FromBody] UpdateCategoryRequest request)
     {
-
         var category = await _context.Categories.FindAsync(id);
 
         if (category is null)
         {
             return NotFound();
         }
-        //
+
         _mapper.Map(request, category);
 
         _context.Categories.Update(category);
         await _context.SaveChangesAsync();
 
-        //Convert Domain Model to DTO
+        // Convert Domain Model to DTO
         var response = new UpdateCategoryResponse
         {
             Id = category.Id,
@@ -161,7 +152,7 @@ public class CategoriesController : ControllerBase
         return Ok(response);
     }
 
-    [HttpDelete("id")]
+    [HttpDelete("{id}")]
     [Authorize(Roles = "Writer")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<IActionResult> DeleteCategory([FromRoute] Guid id)

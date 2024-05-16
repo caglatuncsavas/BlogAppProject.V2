@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\BlogAppProject.V2\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\v1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\v1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|c:\\blogappproject.v2\\blogapp.webapi\\controllers\\imagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88FC469D-C5E9-41DF-B702-82687EEFED83}|BlogApp.WebApi\\BlogApp.WebApi.csproj|solutionrelative:blogapp.webapi\\controllers\\imagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,34 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\V1\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "BlogApp.WebApi\\V1\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\V1\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "BlogApp.WebApi\\V1\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAewEIAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T01:11:43.438Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ImagesController.cs",
-              "DocumentMoniker": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Controllers\\ImagesController.cs",
-              "RelativeDocumentMoniker": "BlogApp.WebApi\\Controllers\\ImagesController.cs",
-              "ToolTip": "C:\\BlogAppProject.V2\\BlogApp.WebApi\\Controllers\\ImagesController.cs",
-              "RelativeToolTip": "BlogApp.WebApi\\Controllers\\ImagesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T01:01:51.99Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"

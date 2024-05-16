@@ -18,9 +18,7 @@ public class AppDbContext : IdentityDbContext
     {
         base.OnModelCreating(builder);
 
-        // Seed Roles, Seed Default User and Seed role of default user.
-
-        //Cretae Reader and Writer Role
+        // Cretae Reader and Writer Role
 
         var readerRoleId = "70e9a0a8-3959-46aa-adf1-8287dc657956";
         var writerRoleId = "3a02e293-22bf-4ec7-b131-d5f8e726fe6f";
@@ -31,11 +29,10 @@ public class AppDbContext : IdentityDbContext
             new IdentityRole{ Id = writerRoleId, Name = "Writer", NormalizedName = "Writer".ToUpper(), ConcurrencyStamp = writerRoleId }
         };
 
-        //Seed the roles
-
+        // Seed the roles
         builder.Entity<IdentityRole>().HasData(roles);
 
-        //Create Default - Admin User
+        // Create Default - Admin User
         var adminUserId = "953cc48e-d6ad-4a94-b3ea-b706993d9088";
         var admin = new IdentityUser()
         {
@@ -50,7 +47,7 @@ public class AppDbContext : IdentityDbContext
 
         builder.Entity<IdentityUser>().HasData(admin);
 
-        //Give Roles To Default User - Admin User
+        // Give Roles To Default User - Admin User
         var adminRoles = new List<IdentityUserRole<string>>()
         {
              new()
