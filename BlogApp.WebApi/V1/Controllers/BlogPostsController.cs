@@ -71,7 +71,6 @@ public class BlogPostsController : ControllerBase
                 UrlHandle = c.UrlHandle
             }).ToList()
         };
-
         return CreatedAtAction(nameof(CreateBlogPost), new { id = blogPost.Id }, response);
     }
 
@@ -80,7 +79,6 @@ public class BlogPostsController : ControllerBase
     public async Task<IActionResult> QueryBlogPosts()
     {
         var blogPosts = await _context.BlogPosts.Include(p => p.Categories).ToListAsync();
-
 
         List<QueryBlogPostsResponse> response = blogPosts.Select(p => new QueryBlogPostsResponse
         {
@@ -99,7 +97,6 @@ public class BlogPostsController : ControllerBase
                 UrlHandle = p.UrlHandle
             }).ToList()
         }).ToList();
-
         return Ok(response);
     }
 
@@ -142,7 +139,6 @@ public class BlogPostsController : ControllerBase
     //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetBlogPostResponse))]
     //public async Task<IActionResult> GetBlogPost([FromRoute] string urlHandle)
     //{
-    //    //Get blogPost details from DB
     //    var blogPost = await _context.BlogPosts.FirstOrDefaultAsync(p => p.UrlHandle == urlHandle);
 
     //    if (blogPost is null)

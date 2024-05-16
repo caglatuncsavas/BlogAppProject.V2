@@ -61,7 +61,6 @@ public class AccountController : ControllerBase
                 var roles = await _userManager.GetRolesAsync(user);
 
                 // Create a Token and Response
-              
                 var token = await Task.Run(() => CreateToken(user, roles.ToList()));
 
                 var response = new LoginResponse()
@@ -116,7 +115,6 @@ public class AccountController : ControllerBase
             }
             return ValidationProblem(ModelState);
         }
-
         return Ok();
     }
 }

@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlogApp.WebApi.Data;
-
 public class AppDbContext : IdentityDbContext
 {
     public AppDbContext(DbContextOptions options) : base(options)
@@ -19,7 +18,6 @@ public class AppDbContext : IdentityDbContext
         base.OnModelCreating(builder);
 
         // Cretae Reader and Writer Role
-
         var readerRoleId = "70e9a0a8-3959-46aa-adf1-8287dc657956";
         var writerRoleId = "3a02e293-22bf-4ec7-b131-d5f8e726fe6f";
 
@@ -61,7 +59,6 @@ public class AppDbContext : IdentityDbContext
                 RoleId = writerRoleId
             }
         };
-
         builder.Entity<IdentityUserRole<string>>().HasData(adminRoles);
     }
 }

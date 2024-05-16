@@ -20,7 +20,6 @@ public class ImagesController : ControllerBase
         _httpContextAccessor = httpContextAccessor;
     }
 
-    // POST: {apibaseurl}/api/Images
     [HttpPost("")]
     [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CreateImageResponse))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ProblemDetails))]
@@ -54,7 +53,6 @@ public class ImagesController : ControllerBase
             Url = blogImage.Url,
             DateCreated = blogImage.DateCreated
         };
-
         return CreatedAtAction(nameof(CreateImage), new { id = blogImage.Id }, response);
     }
     private async Task<BlogImage> Upload(IFormFile file, BlogImage blogImage)

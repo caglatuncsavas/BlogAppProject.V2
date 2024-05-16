@@ -42,7 +42,6 @@ public class CategoriesController : ControllerBase
             Name = category.Name,
             UrlHandle = category.UrlHandle
         };
-
         return Ok(response);
     }
 
@@ -86,7 +85,6 @@ public class CategoriesController : ControllerBase
             Name = category.Name,
             UrlHandle = category.UrlHandle
         }).ToList();
-
         return Ok(response);
     }
 
@@ -110,7 +108,6 @@ public class CategoriesController : ControllerBase
         };
 
         return Ok(response);
-
     }
 
     [HttpGet("count")]
@@ -148,7 +145,6 @@ public class CategoriesController : ControllerBase
             Name = category.Name,
             UrlHandle = category.UrlHandle
         };
-
         return Ok(response);
     }
 
@@ -169,6 +165,5 @@ public class CategoriesController : ControllerBase
 
         return NoContent();
     }
-
 }
 
