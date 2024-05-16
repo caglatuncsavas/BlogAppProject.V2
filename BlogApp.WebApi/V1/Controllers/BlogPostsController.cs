@@ -227,7 +227,6 @@ public class BlogPostsController : ControllerBase
 
         if (blogPost is null)
         {
-
             return NoContent();
         }
 

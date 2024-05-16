@@ -69,7 +69,6 @@ public class AccountController : ControllerBase
                     Roles = roles.ToList(),
                     Token = token
                 };
-
                 return Ok(response);
             }
         }
